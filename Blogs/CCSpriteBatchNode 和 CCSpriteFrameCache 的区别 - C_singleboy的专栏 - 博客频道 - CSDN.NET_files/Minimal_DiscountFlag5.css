@@ -1,0 +1,108 @@
+body {
+  background: white;
+  margin: 0;
+  overflow: hidden;
+}
+
+a {
+  border-style: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+}
+
+hr {
+  border-width: 0;
+  clear: both;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+.adArea {
+  box-shadow: inset 0 0 0 1px black;
+  height: 100%;
+  width: 100%;
+}
+
+.roundedCorners {
+  border-radius: 8px;
+}
+
+.product {
+  background: white;
+  box-shadow: 0 0 0 1px lightgray;
+  float: left;
+  overflow: visible;
+  position: relative;
+}
+
+.product:hover {
+  box-shadow:  0 0 0 1px red;
+}
+
+.productImage {
+  display: block;
+  margin: 0px auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.product svg {
+  position: absolute;
+  right: -47%;
+  top: -3%;
+  width: 125%;
+}
+
+.wide {
+  width: 100%;
+}
+
+.tall {
+  height: 100%;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.product.roundedCorners .imgDiv {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imgDiv {
+  height: 100%;
+  width: 100%;
+}
+
+.salePercentText {
+  bottom: 6px;
+  color: #fff;
+  font: bold 12px Arial, Helvetica, sans-serif;
+  line-height: normal;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 32px;
+}
+
+/* Flags positioning */
+.left-bottom .salePercentText,
+.left-top .salePercentText {
+  left: -2px;
+}
+
+.left-top .salePercentText,
+.right-top .salePercentText {
+  top: 5px;
+}
+

@@ -1,0 +1,5 @@
+
+
+lua加密：http://www.cocoachina.com/bbs/read.php?tid=205802
+
+资源加密：http://www.freeyun.com/2014/09/06/cocos2d-x-game-resources-encryption-solutions/

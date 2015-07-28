@@ -1,0 +1,61 @@
+#border{
+	border:1px solid #AD8F6D;
+	background:#fbfafb;
+}
+h1{
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/bgst.gif) repeat-x;
+}
+h1 a{
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/bgs.gif) no-repeat left top;
+}
+#userInfo{
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/bgs0.png) repeat-x;
+}
+#userInfo a{
+	color:#AD8F6D;
+}
+#tweetList li{
+    border-bottom:1px solid #B49A89;
+}
+#tweetList {
+	border-top:1px solid #B49A89;
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/bgs1.png) repeat-x #fbf6fd;
+	scrollbar-3dlight-color:#ed80cd;
+	scrollbar-highlight-color:#ed80cd;
+	scrollbar-face-color:#ed80cd; 
+	scrollbar-arrow-color:#fff;
+	scrollbar-shadow-color:#ed80cd;
+	scrollbar-darkshadow-color:#ed80cd;
+	scrollbar-base-color:#ffdcf5;
+	scrollbar-track-color:#ffdcf5;	
+}
+#tweetList .source{
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/sbg.png) repeat-x;
+	border:1px solid #B49A89;
+}
+#fansArea{
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/bgs2.png) repeat-x;	
+	border-top:1px solid #B49A89;
+}
+.tweetinfo{
+	color:#a3a3a3;
+}
+.imgshow img{
+	border:1px solid #f1f6f8;
+}
+.userInfo a{
+	color:#33594E;
+}
+#hisFans a{
+	color:#B49A89;
+}
+#fansList li a{
+	color:#B49A89;
+}
+.button{
+	background:url(http://mat1.gtimg.com/app/vt/images/show/s1/button.gif) no-repeat;
+}
+.sendbox textarea{
+	border-color:#B49A89;
+}
+.toppat b{color:#B49A89;}/*  |xGv00|e18a3744d2cb49457b6e4417fe8dd602 */

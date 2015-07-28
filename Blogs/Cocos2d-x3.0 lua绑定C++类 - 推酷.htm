@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.tuicool.com/articles/buuIJf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="jP09Ak+iJxyyL9RGhmXgwFcoDlzLVqoVN7WLCnX4ZKQ=" name="csrf-token">
+    <title>
+            Cocos2d-x3.0  lua绑定C++类 - 推酷
+   </title>
+    <meta name="description" content="Cocos2d-x3.0  lua绑定C++类">
+    <meta property="qc:admins" content="2040660764645137746375">
+  <link rel="shortcut icon" href="http://static0.tuicool.com/favicon.ico" type="image/x-icon">
+  <link href="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/application-828a047c85f954d8bd4790c430aad0e0.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <script async="" type="text/javascript" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/ca-pub-7054762349007490.js"></script><script src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/application-5272668a8ed427c5225cac7c6110da64.js" type="text/javascript"></script>
+
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="http://assets.tuicool.com/assets/font-awesome-ie7.min.css">
+  <![endif]--> 
+    <script type="text/javascript" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/tip.js"></script>
+  
+  <script type="text/javascript" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/m.js"></script>
+<script type="text/javascript" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/spin.min.js"></script><style type="text/css"></style>
+<link rel="stylesheet" href="http://static0.tuicool.com/assets/github.css">
+
+<script src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/share.js"></script><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style1_24.css"></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/o.htm" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+  
+  <div id="header" class="navbar-fixed-top">
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </a>
+          <a href="http://www.tuicool.com/" class="brand">推酷</a>        
+        <nav class="nav-collapse collapse">
+            <ul class="nav navbar primary-nav">                            
+              <li class="active">
+                <a href="http://www.tuicool.com/ah">
+                  文章
+                </a>
+              </li>              
+              <li class="">
+                <a href="http://www.tuicool.com/sites/hot">
+                  站点
+                </a>
+              </li>
+              <li class="">
+                <a href="http://www.tuicool.com/topics">
+                  主题
+                </a>
+              </li>
+              <li class="">
+                <a href="http://course.tuicool.com/">
+                  公开课
+                </a>
+              </li>
+              <li class="">
+                <a href="http://huodong.tuicool.com/">
+                  活动
+                </a>
+              </li>
+              <li class="">
+                <a href="http://www.tuicool.com/mobile">
+                  客户端
+                    <sup style="font-size:0.8em;color: #16A085;">荐</sup>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="http://www.tuicool.com/articles/buuIJf#" class="dropdown-toggle" data-toggle="dropdown">周刊 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.tuicool.com/mags">编程狂人</a></li>
+                  <li><a href="http://www.tuicool.com/mags/design">设计匠艺</a></li> 
+                  <li><a href="http://www.tuicool.com/articles/weekly">一周拾遗</a></li>                  
+                </ul>
+              </li>
+              
+               <li class="dropdown">
+                <a href="http://www.tuicool.com/articles/buuIJf#" class="dropdown-toggle" data-toggle="dropdown">更多 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.tuicool.com/bbs">讨论区</a></li>  
+                  <li><a href="http://www.tuicool.com/about">关于我们</a></li>                 
+                </ul>
+              </li>
+              
+              </ul>
+            <form class="navbar-search pull-left" action="http://www.tuicool.com/search">
+              <input type="text" class="search-query span2" name="kw" placeholder="搜索">
+            </form>
+            <ul class="nav pull-right">
+                <li><a href="http://www.tuicool.com/login">登录</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </div>   
+</div>
+  <div id="flash_container" class="noPrint">    
+  </div>
+  
+  <div class="container-fluid">  
+    <div class="row-fluid article_row_fluid">
+    <div class="span8 contant article_detail_bg">
+        <h1>Cocos2d-x3.0  lua绑定C++类</h1>
+        <div class="article_meta">
+            <div style="margin-bottom: 5px;">
+            <span class="timestamp">时间&nbsp;2014-05-17 23:10:43
+            </span>
+            <span class="from">
+                <i class="icon-globe"></i>
+                    <a class="cut cut28 from" href="http://www.tuicool.com/sites/vQZRB3" target="_blank">CSDN博客
+                    </a>
+            </span>
+            </div>
+            <div class="source">
+                <i style="float:left;">原文</i>&nbsp; 
+                <a class="cut cut70" href="http://blog.csdn.net/qqmcy/article/details/26099859?utm_source=tuicool" style="display:inline-block;">http://blog.csdn.net/qqmcy/article/details/26099859</a>
+            </div>
+            <div>
+                <span>主题</span>
+                <a href="http://www.tuicool.com/topics/11010001" target="_blank">
+                    <span class="new-label">C++</span>
+                </a>
+                <a href="http://www.tuicool.com/topics/11080001" target="_blank">
+                    <span class="new-label">Lua</span>
+                </a>
+            </div>
+        </div>
+        <div class="article_body" id="nei">
+            <div>
+  <p>
+    <span>这里记录下我实现Lua绑定的全过程。</span>
+  </p>
+  <p>
+    <span>
+      原文地址：      <a target="_blank" href="http://blog.csdn.net/qqmcy/article/details/26099859" rel="nofollow,noindex">http://blog.csdn.net/qqmcy/article/details/26099859</a>
+    </span>
+  </p>
+  <p>
+    <span>准备工作：</span>
+  </p>
+  <p>
+    <span>1、创一个一个Lua的2dx工程。（这个网上已经有好多了）</span>
+  </p>
+  <p>
+    <span>2、创一个C++类。</span>
+  </p>
+  <p>
+    <span>
+      TestScene.h &nbsp;这个只是一个简单的场景      <br>
+    </span>
+  </p>
+  <pre class="prettyprint cs"><span class="comment">//</span>
+<span class="comment">//  TestScene.h</span>
+<span class="comment">//  uitestLua</span>
+<span class="comment">//</span>
+<span class="comment">//  Created by 杜甲 on 14-5-17.</span>
+<span class="comment">//</span>
+<span class="comment">//</span>
+
+<span class="preprocessor">#ifndef __uitestLua__TestScene__</span>
+<span class="preprocessor">#<span class="keyword">define</span> __uitestLua__TestScene__</span>
+
+<span class="preprocessor">#include "cocos2d.h"</span>
+USING_NS_CC;
+
+
+
+<span class="keyword">class</span> TestScene :<span class="keyword">public</span> Layer{
+<span class="indent">  </span>
+<span class="keyword">public</span>:
+<span class="indent">  </span><span class="keyword">static</span> Scene* createScene();
+<span class="indent">  </span><span class="keyword">virtual</span> <span class="keyword">bool</span> init();
+<span class="indent">  </span>
+<span class="indent">  </span>CREATE_FUNC(TestScene);
+};
+
+<span class="preprocessor">#<span class="keyword">endif</span> /* defined(__uitestLua__TestScene__) */</span></pre>
+  TestScene.cpp  <pre class="prettyprint cpp"><span class="comment">//</span>
+<span class="comment">//  TestScene.cpp</span>
+<span class="comment">//  uitestLua</span>
+<span class="comment">//</span>
+<span class="comment">//  Created by 杜甲 on 14-5-17.</span>
+<span class="comment">//</span>
+<span class="comment">//</span>
+
+<span class="preprocessor">#include "TestScene.h"</span>
+Scene* TestScene::createScene()
+{
+<span class="indent">  </span><span class="keyword">auto</span> layer= TestScene::create();
+<span class="indent">  </span><span class="keyword">auto</span> scene = Scene::create();
+<span class="indent">  </span>scene-&gt;addChild(layer);
+<span class="indent">  </span><span class="keyword">return</span> scene;
+<span class="indent">  </span>
+}
+
+<span class="keyword">bool</span> TestScene::init()
+{
+<span class="indent">  </span><span class="keyword">bool</span> bRet = <span class="keyword">false</span>;
+<span class="indent">  </span><span class="keyword">do</span> {
+<span class="indent">  </span><span class="indent">  </span>CC_BREAK_IF(!Layer::init());
+<span class="indent">  </span><span class="indent">  </span>
+<span class="indent">  </span><span class="indent">  </span><span class="keyword">auto</span> sprite = Sprite::create(<span class="string">"res/dog.png"</span>);
+<span class="indent">  </span><span class="indent">  </span>sprite-&gt;setPosition(Point(<span class="number">100</span>, <span class="number">200</span>));
+<span class="indent">  </span><span class="indent">  </span>addChild(sprite);
+<span class="indent">  </span><span class="indent">  </span>bRet = <span class="keyword">true</span>;
+<span class="indent">  </span>} <span class="keyword">while</span> (<span class="number">0</span>);
+<span class="indent">  </span><span class="keyword">return</span> bRet;
+}</pre>
+  上面的代码很简单没什么好说的。接下是本文的主要内容。将上面的C++类绑定Lua  <p>
+    <span>步骤：</span>
+  </p>
+  <p>
+    <span>
+      1、绑定基本变量：这个按照readme中的去做，注意NDK要用：      <span>r9b</span>
+      一定要用这个。    </span>
+  </p>
+  <p>
+    <span>2、编译自己的ini文件。这个需要参照其他的ini。我参考的是cocos2dx_physics.ini</span>
+  </p>
+  <p>
+    <span>
+      自己创建一个文本文件将      <span>cocos2dx_physics.ini中的内容全部粘过来，之后我们只需要修改几个地方。</span>
+    </span>
+  </p>
+  <p>
+    <span>下面是修改好的脚本：</span>
+  </p>
+  <p>
+    <span>testscene.ini</span>
+  </p>
+  <pre class="prettyprint javascript">[testscene]
+# the prefix to be added to the generated functions. You might or might not use <span class="keyword">this</span> <span class="keyword">in</span> your own
+# templates
+prefix = testscene
+
+# create a target namespace (<span class="keyword">in</span> javascript, <span class="keyword">this</span> would create some code like the equiv. to `ns = ns || {}`)
+# all classes will be embedded <span class="keyword">in</span> that namespace
+target_namespace = cc
+
+android_headers = -I%(androidndkdir)s/platforms/android-<span class="number">14</span>/arch-arm/usr/include -I%(androidndkdir)s/sources/cxx-stl/gnu-libstdc++<span class="regexp">/4.7/</span>libs/armeabi-v7a/include -I%(androidndkdir)s/sources/cxx-stl/gnu-libstdc++<span class="regexp">/4.7/i</span>nclude
+android_flags = -D_SIZE_T_DEFINED_ 
+
+clang_headers = -I%(clangllvmdir)s/lib/clang/<span class="number">3.3</span>/include 
+clang_flags = -nostdinc -x c++ -std=c++<span class="number">11</span>
+
+cocos_headers = -I%(cocosdir)s/cocos -I%(cocosdir)s/cocos/<span class="number">2</span>d -I%(cocosdir)s/cocos/base -I%(cocosdir)s/cocos/physics -I%(cocosdir)s/cocos/<span class="number">2</span>d/platform -I%(cocosdir)s/cocos/<span class="number">2</span>d/platform/android -I%(cocosdir)s/cocos/math/kazmath -I%(cocosdir)s/cocos/physics
+cocos_flags = -DANDROID -DCOCOS2D_JAVASCRIPT -DCC_USE_PHYSICS=<span class="number">1</span>
+
+cxxgenerator_headers = 
+
+# extra arguments <span class="keyword">for</span> clang
+extra_arguments = %(android_headers)s %(clang_headers)s %(cxxgenerator_headers)s %(cocos_headers)s %(android_flags)s %(clang_flags)s %(cocos_flags)s %(extra_flags)s 
+
+# what headers to parse
+headers = <span class="regexp">/Users/</span>tokou/WORK/<span class="number">5</span>-Cocos2dx/Project/UI/uitestLua/frameworks/runtime-src/Classes/TestScene.h
+
+# what classes to produce code <span class="keyword">for</span>. You can use regular expressions here. When testing the regular
+# expression, it will be enclosed <span class="keyword">in</span> <span class="string">"^$"</span>, like <span class="keyword">this</span>: <span class="string">"^Menu*$"</span>.
+classes = TestScene
+
+# what should we skip? <span class="keyword">in</span> the format ClassName::[<span class="function"><span class="keyword">function</span> <span class="title">function</span>]
+# <span class="title">ClassName</span> <span class="title">is</span> <span class="title">a</span> <span class="title">regular</span> <span class="title">expression</span>, <span class="title">but</span> <span class="title">will</span> <span class="title">be</span> <span class="title">used</span> <span class="title">like</span> <span class="title">this</span>: "^<span class="title">ClassName$</span>" <span class="title">functions</span> <span class="title">are</span> <span class="title">also</span>
+# <span class="title">regular</span> <span class="title">expressions</span>, <span class="title">they</span> <span class="title">will</span> <span class="title">not</span> <span class="title">be</span> <span class="title">surrounded</span> <span class="title">by</span> "^<span class="title">$</span>". <span class="title">If</span> <span class="title">you</span> <span class="title">want</span> <span class="title">to</span> <span class="title">skip</span> <span class="title">a</span> <span class="title">whole</span> <span class="title">class</span>, <span class="title">just</span>
+# <span class="title">add</span> <span class="title">a</span> <span class="title">single</span> "*" <span class="title">as</span> <span class="title">functions</span>. <span class="title">See</span> <span class="title">bellow</span> <span class="title">for</span> <span class="title">several</span> <span class="title">examples</span>. <span class="title">A</span> <span class="title">special</span> <span class="title">class</span> <span class="title">name</span> <span class="title">is</span> "*", <span class="title">which</span>
+# <span class="title">will</span> <span class="title">apply</span> <span class="title">to</span> <span class="title">all</span> <span class="title">class</span> <span class="title">names</span>. <span class="title">This</span> <span class="title">is</span> <span class="title">a</span> <span class="title">convenience</span> <span class="title">wildcard</span> <span class="title">to</span> <span class="title">be</span> <span class="title">able</span> <span class="title">to</span> <span class="title">skip</span> <span class="title">similar</span> <span class="title">named</span>
+# <span class="title">functions</span> <span class="title">from</span> <span class="title">all</span> <span class="title">classes</span>.
+
+<span class="title">skip</span> = 
+       
+
+<span class="title">rename_functions</span> = 
+
+<span class="title">rename_classes</span> = 
+
+# <span class="title">for</span> <span class="title">all</span> <span class="title">class</span> <span class="title">names</span>, <span class="title">should</span> <span class="title">we</span> <span class="title">remove</span> <span class="title">something</span> <span class="title">when</span> <span class="title">registering</span> <span class="title">in</span> <span class="title">the</span> <span class="title">target</span> <span class="title">VM</span>?
+<span class="title">remove_prefix</span> = 
+
+# <span class="title">classes</span> <span class="title">for</span> <span class="title">which</span> <span class="title">there</span> <span class="title">will</span> <span class="title">be</span> <span class="title">no</span> "<span class="title">parent</span>" <span class="title">lookup</span>
+<span class="title">classes_have_no_parents</span> = 
+
+# <span class="title">base</span> <span class="title">classes</span> <span class="title">which</span> <span class="title">will</span> <span class="title">be</span> <span class="title">skipped</span> <span class="title">when</span> <span class="title">their</span> <span class="title">sub</span>-<span class="title">classes</span> <span class="title">found</span> <span class="title">them</span>.
+<span class="title">base_classes_to_skip</span> = <span class="title">Layer</span>
+
+# <span class="title">classes</span> <span class="title">that</span> <span class="title">create</span> <span class="title">no</span> <span class="title">constructor</span>
+# <span class="title">Set</span> <span class="title">is</span> <span class="title">special</span> <span class="title">and</span> <span class="title">we</span> <span class="title">will</span> <span class="title">use</span> <span class="title">a</span> <span class="title">hand</span>-<span class="title">written</span> <span class="title">constructor</span>
+<span class="title">abstract_classes</span> = 
+
+# <span class="title">Determining</span> <span class="title">whether</span> <span class="title">to</span> <span class="title">use</span> <span class="title">script</span> <span class="title">object</span><span class="params">(js object)</span> <span class="title">to</span> <span class="title">control</span> <span class="title">the</span> <span class="title">lifecycle</span> <span class="title">of</span> <span class="title">native</span><span class="params">(cpp)</span> <span class="title">object</span> <span class="title">or</span> <span class="title">the</span> <span class="title">other</span> <span class="title">way</span> <span class="title">around</span>. <span class="title">Supported</span> <span class="title">values</span> <span class="title">are</span> '<span class="title">yes</span>' <span class="title">or</span> '<span class="title">no</span>'.
+<span class="title">script_control_cpp</span> = <span class="title">no</span></span></pre>
+  主要修改的地方：  <pre class="prettyprint ini"><span class="title">[testscene]</span>  
+<span class="setting">prefix = <span class="value">testscene  </span></span>
+<span class="setting">target_namespace =  <span class="value"></span></span>
+<span class="setting">headers = <span class="value">/Users/tokou/WORK/<span class="number">5</span>-Cocos2dx/Project/UI/uitestLua/frameworks/runtime-src/Classes/TestScene.h  --这里我用的是绝对路径用，如果用之前的变量路径找不到 TestScene.h</span></span>
+<span class="setting">classes = <span class="value">TestScene  </span></span>
+<span class="setting">skip =  <span class="value"></span></span>
+<span class="setting">abstract_classes =<span class="value"></span></span></pre>
+  之后我们再自己写一个genbindings_testscene.py脚本这个脚本就是在genbindings.py这个脚本的基础上改的。  <p>
+    <span>只要修改命令参数就OK。</span>
+  </p>
+  <p>
+    <span>将：</span>
+  </p>
+  <pre class="prettyprint undefined">cmd_args = {'cocos2dx.ini' : ('cocos2d-x', 'lua_cocos2dx_auto'), \
+<span class="indent">  </span>'cocos2dx_extension.ini' : ('cocos2dx_extension', 'lua_cocos2dx_extension_auto'), \
+<span class="indent">  </span>'cocos2dx_ui.ini' : ('cocos2dx_ui', 'lua_cocos2dx_ui_auto'), \
+<span class="indent">  </span>'cocos2dx_studio.ini' : ('cocos2dx_studio', 'lua_cocos2dx_studio_auto'), \
+<span class="indent">  </span>'cocos2dx_spine.ini' : ('cocos2dx_spine', 'lua_cocos2dx_spine_auto'), \
+<span class="indent">  </span>'cocos2dx_physics.ini' : ('cocos2dx_physics', 'lua_cocos2dx_physics_auto'), \
+<span class="indent">  </span>  
+<span class="indent">  </span>}</pre>
+  修改成:  <pre class="prettyprint ini"><span class="setting">cmd_args = <span class="value">{'testscene.ini': ('testscene','lua_testscene_auto') }</span></span></pre>
+  之后打开命令行工具：  <p>
+    <span>cd 到tolua文件夹</span>
+  </p>
+  <p>
+    <span>./genbindings_testscene.py</span>
+  </p>
+  <p>
+    <span>编译就完成了。</span>
+  </p>
+  <p>
+    <span>我们接下来使用以下我们自己的类。</span>
+  </p>
+  <p>
+    <span>首先，导入我们编译出来的.hpp和.cpp文件。他们在哪里呢？</span>
+  </p>
+  <p>
+    <span>见下图：</span>
+  </p>
+  <p>
+    <span>
+      1、      <br>
+      <img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/IRZVZf.png" alt="" style="display: block;">
+      <br>
+    </span>
+  </p>
+  <p>
+    <span>
+      2、      <img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/nEJb6zR.png" alt="" style="display: block;">
+    </span>
+  </p>
+  <p>
+    <span>之后在AppDelegate.cpp</span>
+  </p>
+  <p>
+    <span>加入头文件：</span>
+  </p>
+  <p>
+    <span>#include</span>
+    "lua_testscene_auto.hpp"  </p>
+  <p>
+    在&nbsp;    <span>bool</span>
+    <span>AppDelegate</span>
+    ::applicationDidFinishLaunching()中加入如下代码。  </p>
+  <pre class="prettyprint java">auto engine = LuaEngine::getInstance();
+<span class="indent">  </span>ScriptEngineManager::getInstance()-&gt;setScriptEngine(engine);
+<span class="indent">  </span>engine-&gt;executeScriptFile(<span class="string">"src/test2.lua"</span>);
+    <span class="javadoc">/***************这里加入如下代码*/</span>
+    register_all_testscene(engine-&gt;getLuaStack()-&gt;getLuaState());</pre>
+  <p>.lua</p>
+  <pre class="prettyprint ruby">scene = <span class="constant">TestScene</span><span class="symbol">:createScene</span>()
+cc.<span class="constant">Director</span><span class="symbol">:getInstance</span>()<span class="symbol">:runWithScene</span>(scene)</pre>
+  运行效果：  <p>
+    <img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/ieQfq2B.png" alt="" style="display: block;">
+    <br>
+  </p>
+</div>
+
+        </div>
+        <div class="article_social">
+        <div class="article_like">
+                <button class="btn btn-large btn-like" id="my_like2" data_id="buuIJf">
+                    <i class="icon-heart-empty"></i>
+                    赞一个
+                </button>
+                <button class="btn btn-large btn-fav liked" id="my_like" data_id="buuIJf">
+                    <i class="icon-star-empty"></i>
+                    收 藏
+                </button>
+        </div>
+        </div>
+           <div id="site_articles">
+              <div class="article-part-title">
+                <span>推荐文章</span>
+              </div>
+          <ul class="side_article_list">
+                <li class="side_article_list_item">
+                    1.<a href="http://www.tuicool.com/articles/YrQJJbY" target="_blank" title="IOS阶段学习第六天笔记（数组）">
+                    IOS阶段学习第六天笔记（数组）
+                </a>
+                </li>
+                <li class="side_article_list_item">
+                    2.<a href="http://www.tuicool.com/articles/Uja6Ffz" target="_blank" title="分别修改Cube每个面的贴图UV（Unity3D开发之十八）">
+                    分别修改Cube每个面的贴图UV（Unity3D开发之十八）
+                </a>
+                </li>
+                <li class="side_article_list_item">
+                    3.<a href="http://www.tuicool.com/articles/NFV3227" target="_blank" title="高效的使用STL">
+                    高效的使用STL
+                </a>
+                </li>
+                <li class="side_article_list_item">
+                    4.<a href="http://www.tuicool.com/articles/umqIJf3" target="_blank" title="C++中多态性学习（上）">
+                    C++中多态性学习（上）
+                </a>
+                </li>
+                <li class="side_article_list_item">
+                    5.<a href="http://www.tuicool.com/articles/iIvq6fu" target="_blank" title="[C++]两个迭代器初始化容器出现浮点数舍入的情况">
+                    [C++]两个迭代器初始化容器出现浮点数舍入的情况
+                </a>
+                </li>
+                <li class="side_article_list_item">
+                    6.<a href="http://www.tuicool.com/articles/6rmIrie" target="_blank" title="C++中的内存管理">
+                    C++中的内存管理
+                </a>
+                </li>
+         </ul>
+        </div>
+
+        <div id="kan_articles"></div>
+        <div id="article_weibo" style="display:none;">
+            <div class="article-part-title">
+                <span>相关微博</span>
+                <sub>
+                    <a href="http://www.tuicool.com/articles/weibo_list/buuIJf" target="_blank">(<i id="weibo_num"></i>)</a> 
+               </sub>
+            </div>
+            <div class="related-weibo-list"></div>
+        </div>
+        <div class="comments">
+    <div class="comments-area">
+    <div class="comments-header">
+        <h5>我来评几句</h5>
+        <div class="alert comment-alert alert-error" style="display:none;">
+            错误
+        </div>
+            <textarea cols="60" rows="5" id="comment-body" placeholder="请输入评论内容..."></textarea>
+            <span class="btn btn-medium btn-submit" id="comment-submit">登录后评论</span>
+        <p style="margin-top: 5px;margin-left:10px;">
+            已发表评论数(<span class="comment_cnt">0</span>)
+        </p>
+    </div>
+    <div class="comments-list">
+        <div class="empty-cmts alert alert-success" style="display:none;">
+            没有更多评论了^^
+        </div>
+    </div>
+    <div class="more-comments" style="display:none;">
+        <a href="">更多评论</a>
+    </div>
+    <div class="load-fail" style="display: none;">
+        评论加载失败，<a href="javascript:reload_comments('buuIJf',1,0,-1);">重新加载</a>
+    </div>
+    </div>
+</div>
+
+    </div>
+         <div class="span4 article_right_side">
+            
+            <div class="right_top">
+    <div class="article_related_site article_detail_bg">
+    <h4 class="article-part-title">相关站点</h4>
+    <div class="article_related_site_body clearfix">
+        <div class="logo">
+            <img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/vQZRB3.png">
+        </div>
+        <div class="name">
+            <div>
+                    <a href="http://www.tuicool.com/sites/vQZRB3" target="_blank"> CSDN博客</a>
+            </div>
+            <div>
+                    <input type="button" class="btn btn-success right_site_follow" value="+ 订阅" id="my_follow" data_id="vQZRB3">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="right-ad">
+      <script type="text/javascript">BAIDU_CLB_fillSlot("1086186");</script><div id="BAIDU_DUP_wrapper_1086186_0"><iframe id="baidu_clb_slot_iframe_1086186_0" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/Cocos2d-x3.0 lua绑定C++类 - 推酷.htm" onload="BAIDU_DUP_CLB_renderFrame(&#39;1086186_0&#39;)" width="300" height="150" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe></div><script charset="utf-8" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/ecom"></script><script charset="utf-8" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/fixed7o.js"></script>
+
+</div>
+<div class="right-ad" style="margin-top: 8px">
+      <script type="text/javascript">BAIDU_CLB_fillSlot("1092367");</script><div id="BAIDU_DUP_wrapper_1092367_0"><iframe id="baidu_clb_slot_iframe_1092367_0" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/Cocos2d-x3.0 lua绑定C++类 - 推酷.htm" onload="BAIDU_DUP_CLB_renderFrame(&#39;1092367_0&#39;)" width="300" height="150" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe></div><script charset="utf-8" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/ecom(1)"></script>
+
+</div>
+<div class="right-ad" style="margin-top: 8px">
+      <script type="text/javascript">BAIDU_CLB_fillSlot("1086175");</script><div id="BAIDU_DUP_wrapper_1086175_0"><iframe id="baidu_clb_slot_iframe_1086175_0" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/Cocos2d-x3.0 lua绑定C++类 - 推酷.htm" onload="BAIDU_DUP_CLB_renderFrame(&#39;1086175_0&#39;)" width="300" height="150" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe></div><script charset="utf-8" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/ecom(2)"></script>
+
+</div>
+<div class="right-ad" style="margin-top: 8px">
+      <script type="text/javascript">BAIDU_CLB_fillSlot("1096271");</script><div id="BAIDU_DUP_wrapper_1096271_0"><iframe id="baidu_clb_slot_iframe_1096271_0" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/Cocos2d-x3.0 lua绑定C++类 - 推酷.htm" onload="BAIDU_DUP_CLB_renderFrame(&#39;1096271_0&#39;)" width="300" height="150" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe></div><script charset="utf-8" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/ecom(3)"></script>
+
+</div>
+<div id="right_site_articles" class="article_detail_bg">
+    <div class="article-part-title">
+        <span>热门文章</span>
+    </div>
+    <ul class="side_article_list">
+        <li class="side_article_list_item">
+            1.<a href="http://www.tuicool.com/articles/YrQJJbY" target="_blank" title="IOS阶段学习第六天笔记（数组）"> IOS阶段学习第六天笔记（数组） </a>
+        </li>
+        <li class="side_article_list_item">
+            2.<a href="http://www.tuicool.com/articles/Uja6Ffz" target="_blank" title="分别修改Cube每个面的贴图UV（Unity3D开发之十八）"> 分别修改Cube每个面的贴图UV（Unity3D开发之十八） </a>
+        </li>
+        <li class="side_article_list_item">
+            3.<a href="http://www.tuicool.com/articles/NFV3227" target="_blank" title="高效的使用STL"> 高效的使用STL </a>
+        </li>
+        <li class="side_article_list_item">
+            4.<a href="http://www.tuicool.com/articles/umqIJf3" target="_blank" title="C++中多态性学习（上）"> C++中多态性学习（上） </a>
+        </li>
+        <li class="side_article_list_item">
+            5.<a href="http://www.tuicool.com/articles/iIvq6fu" target="_blank" title="[C++]两个迭代器初始化容器出现浮点数舍入的情况"> [C++]两个迭代器初始化容器出现浮点数舍入的情况 </a>
+        </li>
+        <li class="side_article_list_item">
+            6.<a href="http://www.tuicool.com/articles/6rmIrie" target="_blank" title="C++中的内存管理"> C++中的内存管理 </a>
+        </li>
+    </ul>
+</div>
+</div>
+
+<div class="operate_zone" style="position: inherit; top: 0px;">
+    <div class="container-body share-body">
+        <div class="article-part-title">
+            <span>分享本文</span>
+        </div>
+        <div class="share_zone">
+    <div class="bdsharebuttonbox bdshare-button-style1-24" data-bd-bind="1435128814002"> 
+         <a href="http://www.tuicool.com/articles/buuIJf#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="http://www.tuicool.com/articles/buuIJf#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+        <a href="http://www.tuicool.com/articles/buuIJf#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+        <a href="http://www.tuicool.com/articles/buuIJf#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="http://www.tuicool.com/articles/buuIJf#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="http://www.tuicool.com/articles/buuIJf#" class="bds_more" data-cmd="more"></a>
+     </div>
+    <script>
+        window._bd_share_config = {
+            "common" : {
+                "bdSnsKey" : {
+                    "tsina" : "3113829255",
+                    "tqq" : "801536792"
+                },
+                "bdText" : "Cocos2d-x3.0  lua绑定C++类 (分享自 @推酷网)",
+                "bdMini" : "2",
+                "bdMiniList" : false,
+                "bdPic" : "http://aimg1.tuicool.com/IRZVZf.png",
+                "bdStyle" : "1",
+                "bdSize" : "24"
+            },
+            "share" : {}
+        };
+        with (document)
+        0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+</div>
+    </div>
+        <div class="frd_pos">
+        <script async="" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-7054762349007490" data-ad-slot="5705695566" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        </div>
+</div>
+         </div>
+</div>
+
+<div id="myLoginModal" class="modal hide fade">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>用户登陆</h3>
+    </div>
+    <div class="modal-body">
+        <form method="post" action="http://www.tuicool.com/login" class="form-horizontal" id="login-form">
+            <div class="control-group">
+                <input id="xlEmail" name="email" type="text" placeholder="邮箱">
+            </div>
+            <div class="control-group">
+                <input id="xlPassword" name="password" type="password" placeholder="密码">
+            </div>
+            <div class="control-group">
+                <button type="submit" class="btn btn-primary">
+                    &nbsp;&nbsp;登&nbsp;&nbsp;&nbsp;陆&nbsp;&nbsp;
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="read-later-alert">
+</div>
+<div>
+   <a href="http://www.tuicool.com/articles/buuIJf#add-article-to-kan" id="add-article-to-kan-btn" class="btn" data-toggle="modal" style="display:none;">添加到推刊</a>
+   <!-- add_article to kan -->
+<div id="add-article-to-kan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <span class="add-title">收藏到推刊</span>
+    <a href="http://www.tuicool.com/articles/buuIJf#new-kan" class="btn pull-right" data-toggle="modal">创建推刊</a>
+    <i class="clearfix"></i>
+  </div>
+  <div class="modal-body">
+    <ul id="add-kan-list">
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <input type="hidden" value="buuIJf" class="article-id"> 
+    <button class="btn btn-primary pull-left add-to-btn">  收 藏  </button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+  </div>
+</div>
+<div class="add-article-to-kan-alert">
+  已收藏到推刊！
+</div>
+
+   <div id="new-kan" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-body">
+    <input type="text" name="name" id="new-kan-name" placeholder="推刊名(必填)" required="" data-validation-required-message="请填写推刊名">
+    <span class="new-ness-name">请填写推刊名</span>
+    <br>
+    <textarea name="desc" id="desc" rows="6" placeholder="推刊描述"></textarea>
+    <span class="new-ness-desc">描述不能大于100个字符!</span>
+    <br>
+    权限设置：<input type="radio" name="type" value="1" checked="checked"> 公开
+    <input type="radio" name="type" value="0"> 仅自己可见
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary pull-left create-kan-btn" disabled="">创建</button>
+    <button class="btn dismiss-new-kan" data-dismiss="modal" aria-hidden="true">取消</button>
+  </div>
+</div>
+
+
+</div>
+<style type="text/css">
+    .btn-large {
+        padding: 0;
+    }
+    .load-fail {
+        display: none;
+    }
+</style>
+<script src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/highlight.pack.js"></script>
+<script type="text/javascript">
+    $('table').each(function(i) {
+        var size = $(this).children().size();
+        if (size > 1) {
+            $(this).attr('class',"table table-bordered");
+        } else if (size == 1) {
+            var e11 = $(this).children(":first");
+            var e1 = e11[0];
+            var name = e1.nodeName.toLowerCase();
+            if ("tbody" == name) {
+                if (e11.children().size() > 1) {
+                     $(this).attr('class',"table table-bordered");
+                }
+            }
+        }
+    });
+        window.page = 0;
+        window.last = 0;    
+        window.first = true;
+        resize_article_image('#nei', 550);
+                load_comments("buuIJf",1,0,-1);
+                window.uid = -1;
+        open_add_article_to_kan("false");
+        async_do_like2_article(); 
+        $('pre').each(function(i, e) {
+            hljs.highlightBlock(e, "<span class='indent'>  </span>", false)
+        });
+       
+          
+       handle_follow_site("#my_follow","已订阅","+ 订阅");
+</script>
+
+
+  </div>
+
+    <div class="footer">
+    <div class="footer-inner">
+    <dl class="about-link site-link">
+        <dt>
+            网站相关
+        </dt>
+        <dd>
+            <a target="_blank" href="http://www.tuicool.com/about">关于我们</a>
+        </dd>
+        <dd>
+            <a target="_blank" href="http://www.tuicool.com/mobile">移动应用</a>
+        </dd>
+        <dd>
+            <a target="_blank" href="http://www.tuicool.com/bbs/go/issues">建议反馈</a>
+        </dd>
+    </dl>
+    <dl class="site-link follow-link">
+        <dt>
+            关注我们
+        </dt>
+        <dd>
+            <a target="_blank" href="http://e.weibo.com/tuicool2012"><img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/weibo-32.png">推酷网</a>
+        </dd>
+        <dd><img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/weixin-32.png">tuicool2012
+        </dd>
+        <dd><img src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/qun-54.png">QQ群:164644910
+        </dd>
+    </dl>
+    <dl class="site-link links">
+        <dt>
+            友情链接
+        </dt>
+        <dd>
+                <a href="http://www.woshipm.com/" title="人人都是产品经理" target="_blank">人人都是产品经理</a>
+                <a href="http://www.tmtforum.com/" title="TMTForum" target="_blank">TMTForum</a>
+                <a href="http://www.moobuu.com/" title="魔部网" target="_blank">魔部网</a>
+                <a href="http://www.pm265.com/" title="PM256" target="_blank">PM256</a>
+                <a href="http://www.pintu360.com/" title="品途网" target="_blank">品途网</a>
+                <a href="http://www.yidonghua.com/" title="移动信息化" target="_blank">移动信息化</a>
+                <a href="http://www.snsiu.com/" title="行晓网" target="_blank">行晓网</a>
+                <a href="http://code4app.com/" title="Code4App" target="_blank">Code4App</a>
+                <a href="http://www.taskcity.com/" title="智城外包网" target="_blank">智城外包网</a>
+                <a href="http://blog.lamper.cn/" title="LAMP人" target="_blank">LAMP人</a>
+                <a href="http://www.apkway.com/forum.php" title="安卓航班网" target="_blank">安卓航班网</a>
+                <a href="http://www.huxiu.com/" title="虎嗅" target="_blank">虎嗅</a>
+                <a href="http://www.ycpai.com/" title="缘创派" target="_blank">缘创派</a>
+                <a href="http://www.iterduo.com/" title="IT耳朵" target="_blank">IT耳朵</a>
+                <a href="http://www.iresearch.cn/" title="艾瑞网" target="_blank">艾瑞网</a>
+                <a href="http://mediaworks.caixin.com/" title="创媒工场" target="_blank">创媒工场</a>
+                <a href="http://www.guigu.org/" title="硅谷网" target="_blank">硅谷网</a>
+                <a href="http://www.managershare.com/" title="经理人分享" target="_blank">经理人分享</a>
+                <a href="http://www.shichangbu.com/" title="市场部网" target="_blank">市场部网</a>
+                <a href="http://www.ikanchai.com/" title="砍柴网" target="_blank">砍柴网</a>
+                <a href="http://www.cocoachina.com/" title="CocoaChina" target="_blank">CocoaChina</a>
+                <a href="http://www.ibeifeng.com/" title="北风网" target="_blank">北风网</a>
+                <a href="http://www.jiankongbao.com/" title="云智慧" target="_blank">云智慧</a>
+                <a href="http://www.wyzc.com/" title="我赢职场" target="_blank">我赢职场</a>
+                <a href="http://www.thebigdata.cn/" title="大数据时代" target="_blank">大数据时代</a>
+                <a href="http://www.qidic.com/" title="奇笛网" target="_blank">奇笛网</a>
+                <a href="http://www.cngulu.com/" title="咕噜网" target="_blank">咕噜网</a>
+                <a href="http://www.linuxdiyf.com/" title="红联linux" target="_blank">红联linux</a>
+                <a href="http://win10.ithome.com/" title="Win10之家" target="_blank">Win10之家</a>
+                <a href="http://www.niaogebiji.com/" title="鸟哥笔记" target="_blank">鸟哥笔记</a>
+                <a href="http://www.play.cn/" title="爱游戏" target="_blank">爱游戏</a>
+                <a href="http://www.investide.cn/" title="投资潮" target="_blank">投资潮</a>
+                <a href="http://www.31huiyi.com/" title="31会议网" target="_blank">31会议网</a>
+                <a href="https://www.jpush.cn/" title="极光推送" target="_blank">极光推送</a>
+                <a href="https://www.teambition.com/" title="Teambition" target="_blank">Teambition</a>
+                <a href="http://cn.cocos2d-x.org/" title="Cocos引擎中文官网" target="_blank">Cocos引擎中文官网</a>
+            <a href="http://www.tuicool.com/links">更多链接&gt;&gt;</a>&nbsp;&nbsp;
+        </dd>
+    </dl>
+    <div class="clear"></div>
+    </div>
+</div>
+
+<div style="display:none;">
+   <script src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/stat.php" language="JavaScript"></script><script src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=5541078" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./Cocos2d-x3.0 lua绑定C++类 - 推酷_files/pic.gif"></a>
+</div>
+
+
+
+
+<div class="return" title="返回顶部" style="display: none;"></div></body></html><!DOCTYPE html>
+<!-- saved from url=(0038)http://www.tuicool.com/articles/buuIJf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body marginwidth="0" marginheight="0" style="background-color: transparent;"><a href="http://www.baidu.com/cb.php?c=IgF_pyfqnHRYnHRsnHT0IZ0qnfK9ujYkPWbdrj6Y0Aw-5HD3njTvPH60TAq15HDsrjmkrjm0T1YLmHD3nyubPvfkPHnkmhfd0AwY5HDYn1RknW63nHn0IgF_5y9YIZK1rBtEILILQMw-mydBpgwGUv38mvqVQ1qdIAdxTvqdThP-5gwdpyPEUvshIgwVgvd-uA-dUHdBmy48ugc0ThfqnfKBUHYs0ZKz5H00Iy-b5HTsn1mYPjR0Uv-b5Hcvn1fkn6KWpyfqn1mvn1Ts0AqLUWYzPjc4nHD0mLFW5HcvP1Dz" target="_blank"><img src="http://ubmcmm.baidustatic.com/media/v1/0f000n1Tzrrgw3QTm1-XAs.jpg" title="teambition" alt="teambition" border="0" height="150" width="300"></a></body></html><!DOCTYPE html>
+<!-- saved from url=(0038)http://www.tuicool.com/articles/buuIJf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body marginwidth="0" marginheight="0" style="background-color: transparent;"><a href="http://www.baidu.com/cb.php?c=IgF_pyfqnHRYn1D4njT0IZ0qnfK9ujYkP10Lrjnz0Aw-5HD3nWc4n1T0TAq15HDsrHc1PWT0T1Yknh7hPhF-PWKWryn3nHPB0AwY5HDYn1RknW63nHn0IgF_5y9YIZK1rBtEILILQhGsIgPCQhP8QvPEUydEUBqGUHqh5gwW0ZFb5HD0mhYqn0KsTWYs0ZNGujYLnjnvPjfd0AqGujYzPWnYnHc0mv-b5HnvPWnLn0KEIv3qnWfzrHDk0APzm1Y1P1f1P6" target="_blank"><img src="http://ubmcmm.baidustatic.com/media/v1/0f000PCe-3j6z1pPufB8S6.jpg" title="极光推送" alt="极光推送" border="0" height="150" width="300"></a></body></html><!DOCTYPE html>
+<!-- saved from url=(0038)http://www.tuicool.com/articles/buuIJf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body marginwidth="0" marginheight="0" style="background-color: transparent;"><a href="http://www.baidu.com/cb.php?c=IgF_pyfqnHR1P1RLPWf0IZ0qnfK9ujYkPWbdrjmk0Aw-5HD3njTvn1R0TAq15HDsrjmkP1R0T1d-PWbznAn4rAwhPyu-uhmL0AwY5HDYn1RknW63nHn0IgF_5y9YIZ0lQzqLILT8ph-9UhVEUhIBmyt8mvqVQLPGuv4dTjqzuymqIZNGmvqEU0KzujYk0AFV5H00TZcqn0KdpyfqP101PWfYPfKEpyfqnWm1PjDz0APGujY1PWm1P100ULI85HcYnWbknfKWThnqPjcYP0" target="_blank"><img src="http://ubmcmm.baidustatic.com/media/v1/0f000a63FS_IHhqMQRxhds.jpg" title="云智慧" alt="云智慧" border="0" height="150" width="300"></a></body></html><!DOCTYPE html>
+<!-- saved from url=(0038)http://www.tuicool.com/articles/buuIJf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body marginwidth="0" marginheight="0" style="background-color: transparent;"><a href="http://www.baidu.com/cb.php?c=IgF_pyfqnHRYnWRLrjm0IZ0qnfK9ujYkP1DvnHDk0Aw-5HD3n1fLrHR0TAq15HDsrHmzP1D0T1YdmWmkrHTknjfYnAuhuhfs0AwY5HDYn1RknW63nHn0IgF_5y9YIZ0lQzqLILT8nWc8mv3EnW0kPiqrugIPuydBugcE5LnqIZNGmvqEU0KzujYk0AFV5H00TZcqn0KdpyfqP101PWfYPfKEpyfqnWm1PjDz0APGujY1PWm1P100ULI85HcYnWbknfKWThnqn1R1n1f" target="_blank"><img src="http://ubmcmm.baidustatic.com/media/v1/0f000ZolOl9w7HoJ9XSPDs.jpg" title="爱名网" alt="爱名网" border="0" height="150" width="300"></a></body></html><!DOCTYPE html>
+<!-- saved from url=(0038)http://www.tuicool.com/articles/buuIJf -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/osd.js"></script></head><body marginwidth="0" marginheight="0"><iframe style="display:none" data-ad-client="ca-pub-7054762349007490" id="google_esf" name="google_esf" src="http://googleads.g.doubleclick.net/pagead/html/r20150618/r20150619/zrt_lookup.html"></iframe><script async="" type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/js/r20150618/r20150619/expansion_embed.js"></script><script>google_ad_client="ca-pub-7054762349007490";google_ad_slot="5705695566";google_adsbygoogle_status="done";google_ad_width=300;google_ad_height=250;google_available_width=300;google_ad_modifications={"plle":true,"loeids":[]};google_loader_used="aa";google_ad_format="300x250";google_ad_unit_key="4086777233";google_show_ads_impl=true;google_unique_id=1;google_async_iframe_id="aswift_0";google_start_time=1435128813466;google_bpp=153;google_async_rrc=0;</script><script src="http://pagead2.googlesyndication.com/pagead/js/r20150618/r20150619/show_ads_impl.js"></script><iframe id="google_ads_frame1" name="google_ads_frame1" width="300" height="250" frameborder="0" src="http://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7054762349007490&format=300x250&output=html&h=250&slotname=5705695566&adk=4086777233&w=300&lmt=1435128813&loeid=36098824&avail_w=300&flash=16.0.0&url=http%3A%2F%2Fwww.tuicool.com%2Farticles%2FbuuIJf&dt=1435128813466&bpp=153&bdt=2886&shv=r20150618&cbv=r20150619&saldr=aa&correlator=7559359969281&frm=20&ga_vid=1354473604.1435128814&ga_sid=1435128814&ga_hid=935999574&ga_fc=0&u_tz=480&u_his=1&u_java=1&u_h=900&u_w=1600&u_ah=860&u_aw=1600&u_cd=24&u_nplug=42&u_nmime=59&dff=helvetica%20neue&dfs=14&adx=969&ady=1251&biw=1583&bih=772&eid=317150304%2C828064001&oid=3&ref=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3D-rqJSk7kaSStH0tr0cXKwR8CHY8_7tr9_WR1wEpk4bdjKFjFn2u6yrQ9_9Kvd968%26wd%3D%26eqid%3Db141fa3300002f7d00000002558a5364&rx=0&eae=0&fc=24&plat=1%3A13%2C8%3A12%2C9%3A12%2C16%3A32&brdim=0%2C88%2C0%2C88%2C1600%2C0%2C1600%2C772%2C1600%2C772&vis=1&rsz=%7C%7C%7C&abl=CS&ppjl=u&srr=1&fu=8&bc=1&ifi=1&xpc=EdCaxlhYXQ&p=http%3A//www.tuicool.com&dtd=451" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true"></iframe><iframe id="google_osd_static_frame_6114126811735" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>
